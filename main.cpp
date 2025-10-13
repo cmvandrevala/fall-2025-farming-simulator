@@ -1,7 +1,11 @@
 #include <iostream>
 
 #include "src/farm.hpp"
+#include "src/farm_printer.hpp"
 
 int main() {
-  Farm farm(2,2);
+  Farm farm(20, 5);
+  FarmPrinter printer(&farm);
+
+  std::cout << printer.pp();
 }

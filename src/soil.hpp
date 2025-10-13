@@ -6,6 +6,5 @@
 
 class Soil : public Plot {
   public:
-    explicit Soil();
     std::string symbol() override;
 };
