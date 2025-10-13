@@ -16,4 +16,5 @@ class Farm {
     int numberOfRows();
     int numberOfColumns();
     std::string getSymbol(int row, int column);
+    void plant(int row, int column, Plot *vegetable);
 };

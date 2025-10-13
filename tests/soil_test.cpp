@@ -7,4 +7,3 @@ TEST_CASE( "soil has a dot as its symbol" ) {
   Soil soil;
   REQUIRE( soil.symbol() == "." );
 }
-
