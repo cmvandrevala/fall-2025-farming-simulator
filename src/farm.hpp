@@ -9,6 +9,8 @@ class Farm {
   private:
     int rows;
     int columns;
+    int playerRow = 0;
+    int playerColumn = 0;
     std::vector<std::vector<Plot *>> plots;
 
   public:
@@ -17,4 +19,8 @@ class Farm {
     int numberOfColumns();
     std::string getSymbol(int row, int column);
     void plant(int row, int column, Plot *vegetable);
+    void plant(Plot *vegetable);
+    void endDay();
+    void moveRight();
+    void moveLeft();
 };

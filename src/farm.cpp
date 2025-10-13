@@ -24,9 +24,33 @@ int Farm::numberOfColumns() {
 }
 
 std::string Farm::getSymbol(int row, int column) {
-  return plots.at(row).at(column)->symbol();
+  if(row == playerRow && column == playerColumn) {
+    return "@";
+  } else {
+    return plots.at(row).at(column)->symbol();
+  }
 }
 
 void Farm::plant(int row, int column, Plot *vegetable) {
   plots.at(row).at(column) = vegetable;
+}
+
+void Farm::plant(Plot *vegetable) {
+  plant(playerRow, playerColumn, vegetable);
+}
+
+void Farm::endDay() {
+  for(int i = 0; i < rows; i++) {
+    for(int j = 0; j < columns; j++) {
+      plots.at(i).at(j)->endDay();
+    }
+  }
+}
+
+void Farm::moveRight() {
+  playerColumn += 1;
+}
+
+void Farm::moveLeft() {
+  playerColumn -= 1;
 }

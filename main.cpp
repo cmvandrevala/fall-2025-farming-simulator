@@ -3,13 +3,26 @@
 #include "src/farm.hpp"
 #include "src/farm_printer.hpp"
 #include "src/carrot.hpp"
+#include "src/ansi_clear.hpp"
 
 int main() {
-  Farm farm(20, 5);
+  Farm farm(5, 5);
   FarmPrinter printer(&farm);
+  bool gameInProgress = true;
+  std::string userInput;
 
-  Carrot carrot;
-  farm.plant(3, 4, &carrot);
+  while(gameInProgress) {
+    ansi_clear();
+    std::cout << printer.pp();
+    std::cin >> userInput;
 
-  std::cout << printer.pp();
+    if(userInput == "d") {
+      farm.moveRight();
+    } else if(userInput == "a") {
+      farm.moveLeft();
+    } else if(userInput == "c") {
+      Carrot *carrot = new Carrot();
+      farm.plant(carrot);
+    }
+  }
 }

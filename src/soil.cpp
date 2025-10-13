@@ -3,3 +3,7 @@
 std::string Soil::symbol() {
   return ".";
 }
+
+void Soil::endDay() {
+  // no-op
+}
