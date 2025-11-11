@@ -12,6 +12,6 @@ class Carrot : public Plot {
   public:
     std::string symbol() override;
     void end_day() override;
+    void water() override;
     int get_age();
-    void water();
 };
