@@ -55,3 +55,12 @@ TEST_CASE( "it allows us to plant a carrot" ) {
   farm.plant(0, 1, &carrot);
   REQUIRE( farm.get_symbol(0, 1) == "v" );
 }
+
+TEST_CASE( "it allows us to water a carrot" ) {
+  Player player;
+  Farm farm(1, 2, &player);
+  Carrot carrot;
+  farm.plant(0, 1, &carrot);
+  farm.water(0, 1);
+  // REQUIRE( farm.get_symbol(0, 1) == "v" );     You get to decide!!!
+}

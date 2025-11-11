@@ -37,6 +37,11 @@ void Farm::plant(int row, int column, Plot *plot) {
   delete current_plot;
 }
 
+void Farm::water(int row, int column) {
+  Plot *current_plot = plots.at(row).at(column);
+  current_plot->water();
+}
+
 void Farm::end_day() {
   for(int i = 0; i < rows; i++) {
     for(int j = 0; j < columns; j++) {
